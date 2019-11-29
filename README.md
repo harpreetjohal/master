@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
+## Setup locally
+
+1. Clone the repository from [GitHub](https://github.com/harpreetjohal/master.git)
+1. Run `npm install`
+1. Run `ng build` to build the application
+1. Run `ng serve` to run the application
+1. Navigate to [App](http://localhost:4200/).
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
