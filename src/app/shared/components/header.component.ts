@@ -10,7 +10,7 @@ import { TopBarService } from "../services/topBar.service";
 })
 export class HeaderComponent {
     private language: string = Localization.language;
-    private showHomeIcon: boolean;
+    public showHomeIcon: boolean;
     public constructor(private router: Router, 
         private topBarService: TopBarService) {
         topBarService.setTopBarVisible$.subscribe(value => this.showHomeIcon = value);
