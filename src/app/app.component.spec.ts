@@ -5,7 +5,6 @@ import { HeaderComponent } from './shared/components/header.component';
 import { FooterComponent } from './shared/components/footer.component';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import {Pipe, PipeTransform} from '@angular/core';
-import { TopBarService } from './shared/services/topBar.service';
 
 @Pipe({name: 'loc'})
 class MockPipe implements PipeTransform {
@@ -28,7 +27,7 @@ describe('AppComponent', () => {
         MockPipe
       ],
       providers: [
-        TopBarService,{ provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+        { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
         SnotifyService
       ]
     }).compileComponents();

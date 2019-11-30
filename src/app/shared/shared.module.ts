@@ -8,7 +8,6 @@ import { LoadingComponent } from "./components/loading.component";
 import { LocalizationPipe } from "./localization/localization.pipe";
 import { ValidationService } from "./validation/validation.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { TopBarService } from "./services/topBar.service";
 import { NotFoundComponent } from "./components/notFound.component";
 import { ErrorComponent } from "./components/error.component";
 import { HomeComponent } from './components/home.component';
@@ -47,8 +46,7 @@ export class SharedModule {
         return {
             ngModule: SharedModule,
             providers: [
-                ValidationService,
-                TopBarService
+                ValidationService
             ]
         };
     }

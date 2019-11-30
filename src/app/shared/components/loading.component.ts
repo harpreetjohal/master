@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+2import { Component } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 
 @Component({
