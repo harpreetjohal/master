@@ -29,6 +29,7 @@ export class HeaderComponent {
         } else {
             Localization.language = "de";
         }
+
         this.language = Localization.language;
         let currentUrl = this.router.url;
         localStorage.setItem("language", JSON.stringify(this.language));
@@ -36,8 +37,5 @@ export class HeaderComponent {
         //reload current page
         this.router.navigate(["/loading"])
             .then(r => this.router.navigate([currentUrl]));
-    }
-    public logout(): void {
-        this.topBarService.setTopBarVisibleIcon(false);
     }
 }
