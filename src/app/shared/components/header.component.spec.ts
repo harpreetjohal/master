@@ -1,7 +1,16 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HeaderComponent } from './header.component';
+import { PipeTransform, Pipe } from '@angular/core';
   
+@Pipe({name: 'loc'})
+class MockPipe implements PipeTransform {
+    transform(value: any): any {
+        return value;
+    }
+}
+
+
   describe('HeaderComponent', () => {
     beforeEach(async (() => {
       TestBed.configureTestingModule({
@@ -9,7 +18,8 @@ import { HeaderComponent } from './header.component';
           RouterTestingModule
         ],
         declarations: [
-            HeaderComponent
+            HeaderComponent,
+            MockPipe
         ]
       }).compileComponents();
     }));

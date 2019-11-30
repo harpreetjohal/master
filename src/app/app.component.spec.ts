@@ -8,7 +8,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({name: 'loc'})
 class MockPipe implements PipeTransform {
-    transform(value: number): number {
+    transform(value: any): any {
         return value;
     }
 }
