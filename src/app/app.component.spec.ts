@@ -1,16 +1,36 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './shared/components/header.component';
+import { FooterComponent } from './shared/components/footer.component';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+import {Pipe, PipeTransform} from '@angular/core';
+import { TopBarService } from './shared/services/topBar.service';
+
+@Pipe({name: 'loc'})
+class MockPipe implements PipeTransform {
+    transform(value: number): number {
+        return value;
+    }
+}
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        SnotifyModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        MockPipe
       ],
+      providers: [
+        TopBarService,{ provide: 'SnotifyToastConfig', useValue: ToastDefaults},
+        SnotifyService
+      ]
     }).compileComponents();
   }));
 
@@ -26,10 +46,13 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('master');
   });
 
-  it('should render title', () => {
+  it('should have the other components', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('master app is running!');
+    expect(compiled.querySelector('app-header')).not.toBe(null);
+    expect(compiled.querySelector('app-footer')).not.toBe(null);
+    expect(compiled.querySelector('ng-snotify')).not.toBe(null);
+
   });
 });
