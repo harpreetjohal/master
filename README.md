@@ -4,11 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Setup locally
 
-1. Clone the repository from [GitHub](https://github.com/harpreetjohal/master.git)
+1. Clone the repository from [GitHub](https://github.com/harpreetjohal/master.git) `https://github.com/harpreetjohal/master.git`
 1. Run `npm install`
 1. Run `ng build` to build the application
 1. Run `ng serve` to run the application
-1. Navigate to [App](http://localhost:4200/).
+1. Navigate to [App](http://localhost:4200/) `http://localhost:4200/`.
 
 
 ## Development server
